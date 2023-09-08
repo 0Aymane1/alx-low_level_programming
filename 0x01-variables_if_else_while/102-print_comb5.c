@@ -17,7 +17,7 @@ int main(void)
 		secondDigit = firstDigit;
 		while (secondDigit <= 99)
 		{
-			if (secondDigit != firstdigit)
+			if (secondDigit != firstDigit)
 			{
 				putchar((firstDigit / 10) + 48);
 				putchar((firstDigit % 10) + 48);
