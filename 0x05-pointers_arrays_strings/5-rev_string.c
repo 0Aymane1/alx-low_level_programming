@@ -1,25 +1,24 @@
 #include "main.h"
-
 /**
- * rev_string - reverses a string
- *
- * @s: string parameter input
- *
- * Return: Nothing
+ * rev_string - writes the character c to stdout
+ * @s: The character to print
  */
-
 void rev_string(char *s)
 {
-	int l, i;
-	char temp;
+	int l, t;
+	char rev;
 
-	for (i = 0; s[l] != '\0'; ++l)
-		;
-
-	for (i = 0; i < 1 / 2; i++)
+	l = 0;
+	rev = s[0];
+	while (s[l] != '\0')
 	{
-		temp = s[i];
-		s[i] = s[l - 1 - i];
-		s[l - 1 - i] = temp;
+		l++;
+	}
+	for (t = 0; t < l; t++)
+	{
+		l--;
+		rev = s[l];
+		s[l] = s[t];
+		s[t] = rev;
 	}
 }
