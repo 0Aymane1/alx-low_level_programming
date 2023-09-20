@@ -1,25 +1,27 @@
 #include "main.h"
-
 /**
- * _strcat - function
- *
- * @dest: pointer to destination input
- * @src: pointer to source input
- *
- * Return: pointer to resulting string @dest
+ * _strcat - writes the character c to stdout
+ * @dest: The character to.
+ * @src: The character from.
+ * Return: On success dest.
  */
-
 char *_strcat(char *dest, char *src)
 {
-	int c, c2;
+	int i = 0;
 
-	c = 0;
-	/*find the size of dest array*/
-	while (dest[c])
-		c++;
-
-	for (c2 = 0; src[2] ; c2++)
-		dest[c++] = src[c2];
-
+	while (*dest != '\0')
+	{
+		dest++;
+		i++;
+	}
+	while (*src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		i++;
+		src++;
+	}
+	*dest = '\0';
+	dest -= i;
 	return (dest);
 }
