@@ -1,28 +1,28 @@
 #include "main.h"
-
 /**
- * _strcat - a function that contains two strings
- *
- * @dest: pointer to destination
- * @src: pointer to source input
- * @n: most number of bytes from @src
- *
- * Return: @dest
+ * _strncpy - writes the character c to stdout
+ * @dest: The character
+ * @src: The character to copy
+ * @n: the limit
+ * Return: On success dest.
  */
-
-char *_strcat(char *dest, char *src, int n)
+char *_strncpy(char *dest, char *src, int n)
 {
-	int c, i;
+	int i = 0;
 
-	c = 0;
-
-	while (dest[c])
-		c++;
-
-	for (i = 0; i < n && src[i] != '\0'; i++)
-		dest[c + i] = src[i];
-
-	dest[c + i] = '\0';
-
+	while (*src != '\0' && i < n)
+	{
+		*dest = *src;
+		dest++;
+		i++;
+		src++;
+	}
+	while (i < n)
+	{
+		*dest = '\0';
+		dest++;
+		i++;
+	}
+	dest -= i;
 	return (dest);
 }
