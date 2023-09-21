@@ -1,28 +1,30 @@
 #include "main.h"
 /**
- * _strncpy - writes the character c to stdout
- * @dest: The character
- * @src: The character to copy
- * @n: the limit
- * Return: On success dest.
+ * _strncat - concatenate two strings
+ * using at most n bytes from src
+ * @dest: input value
+ * @src: input value
+ * @n: input value
+ *
+ * Return: dest
  */
-char *_strncpy(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
-	int i = 0;
+	int i;
+	int j;
 
-	while (*src != '\0' && i < n)
+	i = 0;
+	while (dest[i] != '\0')
 	{
-		*dest = *src;
-		dest++;
-		i++;
-		src++;
-	}
-	while (i < n)
-	{
-		*dest = '\0';
-		dest++;
 		i++;
 	}
-	dest -= i;
+	j = 0;
+	while (j < n && src[j] != '\0')
+	{
+	dest[i] = src[j];
+	i++;
+	j++;
+	}
+	dest[i] = '\0';
 	return (dest);
 }
