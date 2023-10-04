@@ -26,4 +26,4 @@ char *_strdup(char *str)
 		buff[i] = str[i];
 
 	return (buff);
-}	
+}
