@@ -2,20 +2,19 @@
 #include <stdio.h>
 
 /**
- * string_nconcat - concatenates two str
- * @s1: pointer
- * @s2: pointer
+ * string_nconcat - concatenates two strings
+ * @s1: pointer to first string.
+ * @s2: pointer to second string.
  * @n: Number of bytes from n2 to concatenate.
  *
  * Return: Pointer to space in memory containing concatenated string.
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
 	unsigned int i, j, s1_length, s2_length;
 
-	/*Check if the strings are null*/
+	/*Check if the strings passed are null*/
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
@@ -33,13 +32,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		return (NULL);
 	}
-	/*Copy str.*/
+	/*Copy first string into str.*/
 	for (i = 0; s1[i] != '\0'; i++)
 		str[i] = s1[i];
-	/*Copy second str.*/
+	/*Copy second string into str.*/
 	for (j = 0; j < n; j++)
 	{
-		str[i] = s2[i];
+		str[i] = s2[j];
 		i++;
 	}
 
